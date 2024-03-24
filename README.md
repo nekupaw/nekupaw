@@ -1,6 +1,6 @@
 const nekupaw /* so me */ = {
 "interested": ['furryFandom', 'development'],
-"natonality" 'german',
+"natonality": 'german',
 "gender": 'male',
 "favourite prgm. Language": 'JS',
 
