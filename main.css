@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'consolas';
+    src: url('assets/consolas.ttf');
+}
+
+@font-face {
+    font-family: 'dreieque';
+    src: url('assets/dreieque.ttf');
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: none;
+    outline: none;
+    border: none;
+    user-select: none;
+    font-family: 'consolas'; color: #e0def4;
+}
+
+@keyframes linkAnimation {
+    from, 40%{
+        transform: translateY(30%);
+        opacity: 0;
+    }
+}
+
+@keyframes bgAnimation {
+    from, 40%{
+        filter: blur(50px);
+    }
+}
+
+
+html{
+    background: #232136;
+    overflow: hidden;
+}
+
+
+body{
+    height: 100dvh;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.bg{
+    position: fixed;
+    background-image: url("assets/background.png");
+    background-size: cover;
+    height: 110%;
+    width: 110%;
+    filter: blur(10px);
+    animation: bgAnimation 2s ease;
+}
+
+.frame{
+    z-index: 1;
+    height: 90%; width: 90%;
+    border: solid 2px #e0def4;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 50px;
+
+
+    .headline{
+        font-size: 12vw;
+        font-family: 'dreieque';
+    }
+
+    a{
+        transition: .2s;
+        font-size: 30px;
+        opacity: 0.6;
+        width: fit-content;
+        animation: linkAnimation .6s ease;
+    }
+    a:hover{
+        opacity: 1;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .bg{
+        width: 100%; height: 100%;
+    }
+
+    .frame{
+        border: none;
+        width: 100%; height: 100%;
+        justify-content: end;
+        align-items: end;
+        gap: 50px;
+
+
+        .headline{
+            font-size: 13vh;
+            position: fixed;
+            writing-mode:vertical-rl;
+            transform: rotate(180deg);
+            bottom: 20px; left: 0;
+        }
+    }
+}
