@@ -31,7 +31,6 @@ document.querySelectorAll('.b').forEach(async a => {
             }
             for (let i = 0; i < duration; i++) {
                 const f = Math.round(i / d);
-                console.log(f);
                 a.textContent = text.slice(0, length - f) + genRanString(f);
                 await delay(20);
             }
